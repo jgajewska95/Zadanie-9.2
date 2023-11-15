@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/" method="post">
+        <select name="currency" id="currency">
+            {% for currency in currencies %}
+                <option value="{{ currency }}">{{ currency }}</option>
+            {% endfor %}
+        </select>
+        <input type="text" name="money" id="money">
+        <input type="submit" value="Przelicz"/>
+    </form>
+    {% if result %}
+        <p>
+            Cena: {{ result }} PLN
+        </p>
+    {% endif %}
+</body>
+</html>
